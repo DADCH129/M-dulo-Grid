@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo grid con grid-template-areas</title>
+</head>
+<style>
+    .grid-container{
+        width: 100%;
+        height: 700px;
+        background-color: silver;
+        /*modulo grid*/
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "nav    nav    nav"
+        "main   main   aside"
+        "main2  main3  aside"
+        "footer footer footer"
+        ;
+        gap: 10px 20px;
+    }
+    .item1{
+        grid-area: header;
+        background-color: cadetblue;
+    }
+    .item2{
+        grid-area: nav;
+        background-color: lightblue;
+    }
+    .item3{
+        grid-area: main;
+        background-color: aqua;
+    }
+    .item4{
+        grid-area: aside;
+        background-color: darkblue;
+    }
+    .item5{
+        grid-area: main2;
+        background-color: blue;
+    }
+    .item6{
+        grid-area: main3;
+        background-color: antiquewhite;
+    }
+    .item7{
+        grid-area: footer;
+        background-color: blueviolet;
+    }
+
+    @media screen and (max-width: 720px){
+            .grid-container{
+            grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "main2"
+            "main3"
+            "aside"
+            "footer"
+            ;
+            grid-template-rows: 1fr .5fr 2fr 1fr 1fr 1.5fr 1fr;
+            }
+            
+        }
+</style>
+<body>
+    <section class="grid-container">
+        <section class="grid-item item1">Header</section>
+        <section class="grid-item item2">Nav</section>
+        <section class="grid-item item3">Main</section>
+        <section class="grid-item item4">ASIDE</section>
+        <section class="grid-item item5">Contenedor2</section>
+        <section class="grid-item item6">Contenedor3</section>
+        <section class="grid-item item7">Footer</section>
+
+    </section>
+</body>
+</html>
